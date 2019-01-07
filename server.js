@@ -13,10 +13,10 @@ server.get('/', (req, res) => {
   fs.readFile(htmlPath, 'utf8', (err, html) => {
     const rootElem = '<microfrontends-products-list>';
     const renderedApp = renderToString(React.createElement(App, null));
-
-    setTimeout(() => {
-      res.send(html.replace(rootElem, rootElem + renderedApp));
-    }, 5000);
+    res.send(html.replace(rootElem, rootElem + renderedApp));
+    // setTimeout(() => {
+    //   res.send(html.replace(rootElem, rootElem + renderedApp));
+    // }, 5000);
   });
 });
 
